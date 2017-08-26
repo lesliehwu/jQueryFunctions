@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Leslie's jQuery Things</title>
+
+		<style> 
+			/* CSS GOES HERE */
+
+			.example{
+				width:50%;
+				margin-left:10%;
+				margin-right:10%;
+				border-bottom: 5px solid;
+				padding-bottom:30px;
+			}
+
+			.example button{
+				display:inline-block;
+				text-align:center;
+				margin-left:5%;
+				height:50px;
+				width:100px;
+				box-shadow: 2px 2px 3px black;
+				background-color:orangered;
+				border-color:pink;
+				border-radius:5px;
+				color:white;
+			}
+
+			#myValue{
+				display:inline-block;
+				margin-left:5%;
+			}
+
+			.example p{
+				display:inline-block;
+				text-align:center;
+				margin-left:10%;
+			}
+
+			.example h1{
+				text-align:center;
+			}
+
+			#sadpup{
+				height:150px;
+				width:250px;
+				margin-left:35%;
+			}
+
+			#potato{
+				height:150px;
+				width:250px;
+				margin-left:35%;
+				display:none;
+			}
+
+			#donuts{
+				height:150px;
+				width:250px;
+				margin-left:35%;
+				display:none;
+			}
+
+			#steve{
+				height:150px;
+				width:250px;
+				margin-left:35%;
+				display:none;
+			}
+
+			#trump{
+				height:150px;
+				width:250px;
+				margin-left:35%;
+			}
+
+			#ewok{
+				height:150px;
+				width:250px;
+				margin-left:35%;
+			}
+
+			#koreandog{
+				height:150px;
+				width:250px;
+				margin-left:35%;
+				display:none;
+			}
+
+			#lionking{
+				height:150px;
+				width:250px;
+				margin-left:35%;
+			}
+
+			.red{
+				color:red;
+				font-weight:bold;
+			}
+
+			#before{
+				display:inline-block;
+			}
+
+			#after{
+				display:inline-block;
+			}
+
+			#append{
+				display:inline-block;
+			}
+
+			#attribute{
+				display:inline-block;
+			}
+
+			#pasteHere{
+				display:inline-block;
+			}
+
+			#myValue{
+				color:red;
+				display:inline-block;
+			}
+
+		</style>
+
+		<script type = "text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		</script>
+
+		<script type = "text/javascript"> 
+			$(document).ready(function(){
+				//JQUERY GOES HERE
+				
+				$("#click").click(function(){
+					alert("ʕ •ᴥ•ʔ");
+				});
+
+				$("#hide").click(function(){
+					$("#sadpup").hide("slow");
+				});
+
+				$("#show").click(function(){
+					$("#potato").show("slow");
+				});
+
+				$("#toggle").click(function(){
+					$("#donuts").toggle("slow");
+				});
+
+				$("#slidedown").click(function(){
+					$("#steve").slideDown("slow");
+				});
+
+				$("#slideup").click(function(){
+					$("#trump").slideUp("slow");
+				});
+
+				$("#slidetoggle").click(function(){
+					$("#ewok").slideToggle("slow");
+				});
+
+				$("#fadein").click(function(){
+					$("#koreandog").fadeIn("slow");
+				});
+
+				$("#fadeout").click(function(){
+					$("#lionking").fadeOut("slow");
+				});
+
+				$("#addclass").click(function(){
+					$("#redtext").addClass("red");
+				});
+
+				$("#before").click(function(){
+					$("#before").before("Before ");
+				});
+
+				$("#after").click(function(){
+					$("#after").after("A rainbow!");
+				});
+
+				$("#append").click(function(){
+					$("#append").append("ix");
+				});
+
+				$("#htmlEx").click(function(){
+					$("#htmlEx").html("Now you don't!");
+				});
+
+
+				$("#daButton").click(function(){
+					var iAm = $("#daButton").attr("type");
+					$("#attribute").append(" " + iAm);
+				});
+
+				$("#myValue").change(function(){
+					var myVal = $("#myValue").val();
+					$("#youPicked").append(" " + myVal);
+				});
+
+				$("#textButton").click(function(){
+					$("#addText").text("some text");
+				});
+
+				$("#dataButton").click(function(){
+					$("#data").data("mySandwich",{first:"peanut butter",last:"jelly"});
+					$("span:first").text($("#data").data("mySandwich").first);
+					$("span:last").text($("#data").data("mySandwich").last);
+			});
+		});
+
+		</script>
+
+	</head>
+
+	<body>
+
+		<!-- .click -->
+		<div class = "example" id = "click">
+			<h1>.click</h1>
+			<button type="button">CLICK</button>
+			<p>Click on the button and see what happens!</p>
+		</div>
+
+		<!-- .hide -->
+		<div class="example" id="hide">
+			<h1>.hide</h1>
+			<button type="button">HIDE</button>
+			<p>Click on the button to hide this sad pupper.</p>
+			<img src="sadpupper.gif" id="sadpup" />
+		</div>
+
+		<!-- .show -->
+		<div class="example" id="show">
+			<h1>.show</h1>
+			<button type="button" id="htmlButton">SHOW</button>
+			<p>Click on the button to see a walking potato.</p>
+			<img src="potato.gif" id="potato" />
+		</div>
+
+		<!-- .toggle -->
+		<div class="example" id="toggle">
+			<h1>.toggle</h1>
+			<button type="button">TOGGLE</button>
+			<p>Click on the button if you're hungry.</p>
+			<img src="donuts.gif" id="donuts" />
+		</div>
+
+		<!-- .slideDown -->
+		<div class="example" id="slidedown">
+			<h1>.slideDown</h1>
+			<button type="button">SLIDEDOWN</button>
+			<p>Click on the button for a quick motivator!</p>
+			<img src="steve.gif" id="steve" />
+		</div>
+
+		<!-- .slideUp -->
+		<div class="example" id="slideup">
+			<h1>.slideUp</h1>
+			<button type="button">SLIDEUP</button>
+			<p>Click on the button to clean up this page.</p>
+			<img src="trump.gif" id="trump" />
+		</div>
+
+		<!-- .slideToggle -->
+		<div class="example" id="slidetoggle">
+			<h1>.slideToggle</h1>
+			<button type="button">SLIDETOGGLE</button>
+			<p>Click on the button to show/hide this ewok.</p>
+			<img src="ewok.gif" id="ewok" />
+		</div>
+
+		<!-- .fadeIn -->
+		<div class="example" id="fadein">
+			<h1>.fadeIn</h1>
+			<button type="button">FADEIN</button>
+			<p>Click on the button to see a happy AF doggo.</p>
+			<img src="koreandog.gif" id="koreandog" />
+		</div>
+
+		<!-- .fadeOut -->
+		<div class="example" id="fadeout">
+			<h1>.fadeOut</h1>
+			<button type="button">FADEOUT</button>
+			<p>Click on the button to hide this sad scene.</p>
+			<img src="lionking.gif" id="lionking" />
+		</div>
+
+		<!-- .addClass -->
+		<div class="example" id="addclass">
+			<h1>.addClass</h1>
+			<button type="button">ADDCLASS</button>
+			<p id="redtext">Click on the button to change me to red!</p>
+		</div>
+
+		<!-- .before -->
+		<div class="example" id="before">
+			<h1>.before</h1>
+			<button type="button">BEFORE</button>
+			<p>Click to see when there was no rain.</p>
+			<p>the flood there was no rain.</p>
+		</div>
+
+		<!-- .after -->
+		<div class="example" id="after">
+			<h1>.after</h1>
+			<button type="button">AFTER</button>
+			<p>Click to see what follows a storm.</p>
+		</div>
+
+		<!-- .append -->
+		<div class="example" id="append">
+			<h1>.append</h1>
+			<button type="button">APPEND</button>
+			<p>Click to see how append works!</p>
+			<br>
+			<p id="append">Append</p>
+		</div>
+
+		<!-- .html -->
+		<div class="example" id="htmlEx">
+			<h1>.html</h1>
+			<button type="button">HTML</button>
+			<p>Now you see me...</p>
+		</div>
+
+		<!-- .attr -->
+		<div class="example">
+			<h1>.attr</h1>
+			<button type="button" id="daButton">ATTR</button>
+			<p id="attribute">The thing on my left is a</p>
+		</div>
+
+		<!-- .val -->
+		<div class="example">
+			<h1>.val</h1>
+			<select id="myValue">
+				<option></option>
+				<option>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
+			<p id="youPicked">You picked option:</p>
+		</div>
+
+		<!-- .text -->
+		<div class="example">
+			<h1>.text</h1>
+			<button type="button" id="textButton">TEXT</button>
+			<p>Let's add some text!</p>
+			<p id="addText"></p>
+		</div>
+
+		<!-- .data -->
+		<div class="example" id ="data">
+			<h1>.data</h1>
+			<button type="button" id="dataButton">DATA</button>
+			<p>Click on the button to see a perfect pair!</p>
+			<span></span>
+			<p> & </p>
+			<span></span>
+		</div>
+	</body>
+
+</html>
